@@ -49,10 +49,10 @@ let pikachu=document.getElementById("pikachu");
 document.addEventListener("keyup",function(e){
     let l=document.getElementById("l");
     l.innerText=e.code;
+    console.log(e.code);
     if(e.code=="Enter"){
         let busqueda=search.value;
         busqueda=busqueda.toLowerCase();
-        console.log(busqueda);
         buscarPokemon(busqueda);
         
     }
