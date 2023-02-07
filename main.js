@@ -47,6 +47,8 @@ let c_esta=document.getElementById("contenedor-estadisticas");
 let pikachu=document.getElementById("pikachu");
 
 document.addEventListener("keyup",function(e){
+    let l=document.getElementById("l");
+    l.innerText=e.code;
     if(e.code=="Enter"){
         let busqueda=search.value;
         busqueda=busqueda.toLowerCase();
