@@ -26,6 +26,8 @@ html {
     padding: 20px 0px;
     display: flex;
     justify-content: center;
+    /* flex-direction: column;
+    width:200px; */
 }
 .search{
     width: 190px;
@@ -35,6 +37,11 @@ html {
     /* font-size: 18px; */
     
 }
+.contenedor-buscador svg{
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 .informacion{
     display: flex;
     flex-wrap: wrap;    

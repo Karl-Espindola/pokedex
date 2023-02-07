@@ -45,6 +45,13 @@ let search=document.getElementById("search");
 let c_img=document.getElementById("contenedor-img");
 let c_esta=document.getElementById("contenedor-estadisticas");
 let pikachu=document.getElementById("pikachu");
+let btn=document.getElementById("btn");
+
+btn.addEventListener("click",function(){
+    let busqueda=search.value;
+    busqueda=busqueda.toLowerCase();
+    buscarPokemon(busqueda);
+})
 
 document.addEventListener("keyup",function(e){
     if(e.code=="Enter"){
