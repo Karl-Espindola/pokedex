@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor-logo">
+            <img src="img/pokemon_logo.png" alt="">
+        </div>
+        <div class="contenedor-buscador">
+            <input type="text" class="search" id="search" placeholder="Buscar">
+            
+        </div>
+        <div class="informacion">
+            <div class="pikachu " id="pikachu">
+                <img src="img/pikachu-silueta.png" alt="">
+                <div class="no-found" id="no_found"></div>
+            </div>
+            <div class="contenedor-img ocultar" id="contenedor-img">
+                <img src="img/pikachu-silueta.png" alt="" id="imgPoke">
+            </div>
+            <div class="contenedor-estadisticas ocultar" id="contenedor-estadisticas">
+                <h2 class="nombre" id="nombre">-----</h2>
+                <div class="tipos" id="tipos">
+                    <span>electric</span><span>tierra</span><span>agua</span>
+                </div>
+                <ul>
+                    <li><span>Hp</span><span id="hp">0</span></li>
+                    <li><span>Attack</span><span id="attack">0</span></li>
+                    <li><span>Defense</span><span id="defense">0</span></li>
+                    <li><span>Special-attack</span><span id="espAttack">0</span></li>
+                    <li><span>Special-defense</span><span id="espDefen">0</span></li>
+                    <li><span>Speed</span><span id="speed">0</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+
+</html>

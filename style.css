@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html {
+    background-image: repeating-radial-gradient(#0000 0% 12%,#f8f3eb 13% 26% );
+    background-size:100px 100px;
+  }
+.contenedor{
+    width: 80%;
+    margin: auto;
+}
+.contenedor-logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.contenedor-logo img{
+    max-width:220px;
+}
+.contenedor-buscador{
+    background-color: #313131;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+.search{
+    width: 190px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    /* font-size: 18px; */
+    
+}
+.informacion{
+    display: flex;
+    flex-wrap: wrap;    
+}
+.pikachu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pikachu img{
+    width:300px;
+}
+.contenedor-img{
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img img{
+    width: 300px;
+}
+.contenedor-estadisticas{
+    width: 49%;
+    padding: 20px;
+    
+}
+.nombre{
+    /* text-align: center; */
+    font-family: sans-serif;
+}
+.tipos{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 20px;
+}
+.tipos span{
+    padding: 5px;
+    border: 1px solid rgb(255, 187, 0);
+    box-shadow: 0 0 5px rgb(255, 187, 0);
+    font-weight: bold;
+    border-radius:5px;
+}
+ul{
+    list-style: none;
+    padding-top: 10px;
+    width: 70%;
+}
+li{
+    /* margin: 5px 0px; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 0 0 2px black;
+    /* border: 1px solid rgb(196, 196, 196);
+    background-color: #2D4495;
+    box-shadow: 0 0 5px black;
+    color: aliceblue; */
+
+}
+.ocultar{
+    display: none;
+}
+.no-found{
+    text-align: center;
+    font-size: 30px;
+}
+@media (max-width: 600px){
+    .informacion{
+        flex-direction: column;
+    }
+    .contenedor-img, .contenedor-estadisticas{width: 100%;}
+    ul{
+        width: 100%;
+    }
+}
