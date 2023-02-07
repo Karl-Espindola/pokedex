@@ -114,5 +114,5 @@ li{
     }
 }
 @media (max-width: 500px){
-    .contenedor{width=100%}
+    .contenedor{width:100%}
 }
