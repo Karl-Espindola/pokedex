@@ -7,9 +7,12 @@
 html {
     background-image: repeating-radial-gradient(#0000 0% 12%,#f8f3eb 13% 26% );
     background-size:100px 100px;
-  }
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+}
+a{text-decoration: none;}
 .contenedor{
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 .contenedor-logo{
@@ -44,7 +47,10 @@ html {
 
 .informacion{
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;   
+    border-radius: 30px;
+    justify-content: space-between;
+    margin-top: 5px;
 }
 .pikachu{
     width: 100%;
@@ -66,9 +72,11 @@ html {
     width: 300px;
 }
 .contenedor-estadisticas{
-    width: 49%;
+    width: 50%;
     padding: 20px;
-    
+    padding-left: 40px;
+    background-color: white;
+    border-radius: 30px;
 }
 .nombre{
     /* text-align: center; */
@@ -81,16 +89,16 @@ html {
     padding-top: 20px;
 }
 .tipos span{
-    padding: 5px;
-    border: 1px solid rgb(255, 187, 0);
-    box-shadow: 0 0 5px rgb(255, 187, 0);
+    padding: 5px 15px;
+    color: white;
+
     font-weight: bold;
-    border-radius:5px;
+    border-radius:25px;
 }
 ul{
     list-style: none;
     padding-top: 10px;
-    width: 70%;
+    width: 90%;
 }
 li{
     /* margin: 5px 0px; */
@@ -111,6 +119,81 @@ li{
     text-align: center;
     font-size: 30px;
 }
+
+/* ###### Preloader ########## */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 55px);
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    border-color: #f1c708 transparent #c50e0e transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+/* ############################## */
+/* ###### Lista Pokemons ########## */
+#lista_pokemon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin: 25px 0px;
+}
+.nombre-pokemon-card{
+    color: #f8f3eb;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+.pokemon-card{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgb(66, 64, 64);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    gap: 10px;
+    padding: 10px;
+}
+#prev, #next{
+    cursor: pointer;
+}
+#pag{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    color: #060116;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 @media (max-width: 600px){
     .informacion{
         flex-direction: column;
