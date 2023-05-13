@@ -16,7 +16,9 @@ function buscarPokemon(nombre){
         no_found.innerText="No encontrado";
     })
 }
+
 function verPokemon(pokemon){
+    
     pikachu.classList.add("ocultar");
     c_img.classList.remove("ocultar");
     c_esta.classList.remove("ocultar");
@@ -62,7 +64,7 @@ function verPokemonCard(data){
     cardPokemon.classList.add("pokemon-card");
     cardPokemon.name = data.name;
     cardPokemon.style.background=tiposColor[data.types[0].type.name];
-    cardPokemon.addEventListener("click", (e)=>{verDetalles(e)})
+    cardPokemon.addEventListener("click", (e)=>{resetearNombresEstados(); verDetalles(e)})
     let imgPokemon = document.createElement("img");
     imgPokemon.src = data.sprites.other["official-artwork"].front_default;
     imgPokemon.name = data.name;
@@ -79,6 +81,7 @@ function verPokemonCard(data){
     nomPokemon.appendChild(texNomPokemon);
 
 }
+
 function listaPokemon(url = "https://pokeapi.co/api/v2/pokemon"){
     fetch(url)
     .then(function(res){
@@ -178,19 +181,36 @@ const tiposColor=
 let preloader = document.getElementById("preloader");
 
 btn.addEventListener("click",function(){
-    no_found.innerText="";
-    preloader.classList.add("lds-dual-ring");
     let busqueda=search.value;
     busqueda=busqueda.toLowerCase();
+
+    if(busqueda == "neferu"){ //para personaje especial
+        personajeEspecial();
+        verPokemon(datos);
+        return 0;
+    }
+
+    resetearNombresEstados();
+    no_found.innerText="";
+    preloader.classList.add("lds-dual-ring");
     buscarPokemon(busqueda);
 })
 
 document.addEventListener("keyup",function(e){
     if(e.code=="Enter"){
-        no_found.innerText="";
-        preloader.classList.add("lds-dual-ring");
+
         let busqueda=search.value;
         busqueda=busqueda.toLowerCase();
+
+        if(busqueda == "neferu"){ //para personaje especial
+            personajeEspecial();
+            verPokemon(datos);
+            return 0;
+        }
+
+        resetearNombresEstados();
+        no_found.innerText="";
+        preloader.classList.add("lds-dual-ring");;
         buscarPokemon(busqueda);
         
     }
@@ -200,3 +220,41 @@ document.addEventListener("keyup",function(e){
 next.addEventListener("click", siguienteLista);
 prev.addEventListener("click", anteriorLista);
 
+
+
+// ###########################
+
+// ########### Personaje especial #################
+
+const datos = {
+    name:"NeferPitou",
+    types:[{type:{name:"poison"}}],
+    stats:[{base_stat:"999"},
+        {base_stat:"999"},
+        {base_stat:"999"},
+        {base_stat:"Lamentablemente Si"},
+        {base_stat:"desconocido"},
+        {base_stat:"Furro"}
+    ],
+
+    sprites:{other:{"official-artwork":{front_default:"img/Neferpitou.png"}}}
+
+}
+
+let estados = document.getElementsByClassName("estados");
+
+function personajeEspecial(){
+    const listaEstds = ["Vitalidad", "Ataque", "Defensa", "Rule 34", "Ataque especial", "Raza"];
+    for(let i=0; i<estados.length; i++){
+        estados[i].innerText = listaEstds[i];
+    }
+}
+
+function resetearNombresEstados(){
+    const listaEstds = ["Hp", "Attack", "Defense", "Special-attack", "Special-defense", "Speed"];
+    for(let i=0; i<estados.length; i++){
+        estados[i].innerText = listaEstds[i];
+    }
+}
+
+// ########### Fin de personaje especial #################
